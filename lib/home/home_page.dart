@@ -44,15 +44,17 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.max,
           children: [
             ListenableBuilder(
-                listenable: Listenable.merge([_loading, _profile]),
-                builder: (context, _) {
-                  return HomeHeader(
-                      profile: _profile.value,
-                      loading: _loading.value,
-                      onLogin: _signIn,
-                      onLogout: _signOut,
-                      onRegister: _signUp);
-                }),
+              listenable: Listenable.merge([_loading, _profile]),
+              builder: (context, _) {
+                return HomeHeader(
+                  profile: _profile.value,
+                  loading: _loading.value,
+                  onLogin: _signIn,
+                  onLogout: _signOut,
+                  onRegister: _signUp,
+                );
+              },
+            ),
             verticalSpaceMedium,
             ValueListenableBuilder(
                 valueListenable: _loggedIn,

@@ -15,9 +15,8 @@ void main() async {
       loginRedirectUri: dotenv.env['KINDE_LOGIN_REDIRECT_URI']!,
       logoutRedirectUri: dotenv.env['KINDE_LOGOUT_REDIRECT_URI']!,
       audience: dotenv.env['KINDE_AUDIENCE'], //optional
-      scopes: ["email","profile","offline","openid"] // optional
-  );
-
+      scopes: ["email", "profile", "offline", "openid"] // optional,
+      );
   await EncryptedBox.init();
   runApp(const MyApp());
 }
@@ -30,9 +29,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
-      builder: (_ , child) {
+      builder: (_, child) {
         return MaterialApp(
-          title: 'Flutter Kinde StarterKit',
+          debugShowCheckedModeBanner: false,
+          title: 'Kinde App',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),

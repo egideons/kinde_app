@@ -27,8 +27,8 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     namespace "au.kinde.flutter_starter_kit.flutter_starter_kit"
-    compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+  compileSdk 34
+  ndkVersion '26.1.10909125'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -49,12 +49,13 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 24
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
+      targetSdk 34
+      versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+      multiDexEnabled true
 
-        manifestPlaceholders += [
-          'appAuthRedirectScheme': '<your_custom_scheme>'
+      manifestPlaceholders += [
+          'appAuthRedirectScheme': 'com.kinde.myapp://'
         ]
     }
 
@@ -65,6 +66,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+  buildToolsVersion '34.0.0'
 }
 
 flutter {

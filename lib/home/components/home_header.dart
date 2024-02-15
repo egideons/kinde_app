@@ -3,13 +3,14 @@ import 'package:flutter_starter_kit/constants.dart';
 import 'package:kinde_flutter_sdk/kinde_api.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader(
-      {super.key,
-      this.profile,
-      this.onLogin,
-      this.onLogout,
-      this.onRegister,
-      this.loading = false});
+  const HomeHeader({
+    super.key,
+    this.profile,
+    this.onLogin,
+    this.onLogout,
+    this.onRegister,
+    this.loading = false,
+  });
 
   final VoidCallback? onLogin;
   final VoidCallback? onLogout;
